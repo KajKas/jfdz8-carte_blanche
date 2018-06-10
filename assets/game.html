@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+</head>
+<body>
+<script>
+    /*var snake = (function () {
+        var arena = document.getElementById('arena');
+        var scoreCointainer = document.getElementById('score');
+        var score = 0;
+        var playerPosition = {
+            x: 0,
+            y: 0
+        };
+        function createFruit(friut) {
+
+        }*/
+        function createArena(sizeY, sizeX) {
+            return Array(sizeY).fill(0).map(function(element) {
+                return Array(sizeX).fill('')
+            })
+        }
+        console.log(createArena(10, 10))
+        /*var arena = createArena(10, 10);
+        var moves = {
+            ArrowRight: function (pos) {
+                return {
+                    x: pos.x + 1
+                }
+            },
+            ArrowLeft: function (pos) {
+                return {
+                    x: pos.x - 1
+                }
+            },
+            ArrowUp: function (pos) {
+                return {
+                    y: pos.y - 1
+                }
+            },
+            ArrowDown: function (pos) {
+                return {
+                    y: pos.y + 1
+                }
+            }
+        };
+        var pressedKey = '';
+        window.addEventListener('keydown', function (event) {
+            pressedKey = event.code;
+            console.log(pressedKey)
+        });
+        console.log(arena)
+
+    })();*/
+</script>
+</div>
+</body>
+</html>
