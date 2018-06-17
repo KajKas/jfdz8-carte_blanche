@@ -4,57 +4,65 @@
     <meta charset="UTF-8">
     <title>Snake</title>
 </head>
+<style>
+
+    .board__cell {
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        display: inline-block;
+
+    }
+
+    .board__cell--visible {
+        background: #1c7aa7;
+
+    }
+
+</style>
 <body>
-<script>
-    /*var snake = (function () {
-        var arena = document.getElementById('arena');
-        var scoreCointainer = document.getElementById('score');
-        var score = 0;
-        var playerPosition = {
-            x: 0,
-            y: 0
-        };
-        function createFruit(friut) {
+<div id="board">
 
-        }*/
-        function createArena(sizeY, sizeX) {
-            return Array(sizeY).fill(0).map(function(element) {
-                return Array(sizeX).fill('')
-            })
-        }
-        console.log(createArena(10, 10))
-        /*var arena = createArena(10, 10);
-        var moves = {
-            ArrowRight: function (pos) {
-                return {
-                    x: pos.x + 1
-                }
-            },
-            ArrowLeft: function (pos) {
-                return {
-                    x: pos.x - 1
-                }
-            },
-            ArrowUp: function (pos) {
-                return {
-                    y: pos.y - 1
-                }
-            },
-            ArrowDown: function (pos) {
-                return {
-                    y: pos.y + 1
-                }
-            }
-        };
-        var pressedKey = '';
-        window.addEventListener('keydown', function (event) {
-            pressedKey = event.code;
-            console.log(pressedKey)
-        });
-        console.log(arena)
-
-    })();*/
-</script>
 </div>
+
+<script>
+    var board = document.getElementById('board');
+    var boardHeight = 15;
+    var boardWidth = 15;
+    var boardNode;
+    var rowNode;
+    var columnNode;
+    var indexX;
+
+   createBoard();
+   displaySnake(3, 4);
+
+
+     function displaySnake(indexY, indexX) {
+        var allSnakes = board.querySelectorAll('.board__cell');
+        allSnakes[indexY].classList.add('board__cell--visible');
+
+    }
+
+
+
+    function createBoard() {
+        for (var y = 0; y < boardHeight; y++) {
+            rowNode = document.createElement('div');
+            for (var x = 0; x < boardWidth; x++) {
+                columnNode = document.createElement('div');
+                columnNode.classList.add('board__cell');
+                rowNode.appendChild(columnNode);
+
+            }
+            board.appendChild(rowNode);
+
+        }
+    }
+
+
+
+</script>
+
 </body>
 </html>
